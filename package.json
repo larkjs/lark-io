@@ -1,0 +1,16 @@
+{
+    "name": "vi-io",
+    "main": "io.js",
+    "version" : "0.0.0",
+    "author" : "Sun Haohao",
+    "maintainers" : [
+        {
+            "name"  : "Sun Haohao",
+            "email" : "viRingbells@qq.com"
+        }
+    ],
+    "repositories" : "https://github.com/viRingbells/vi-io.git",
+    "dependencies" : {
+        "vi-misc" : "^0.0.2"
+    }
+}
