@@ -25,7 +25,7 @@ Start a server for any tcp connections:
     });
     io.listen(3000);
 
-Besides tcp, http and websocket connections are also supported, you can switch the server with code like this:
+Besides tcp, http and websocket connections are also supported. Use `io.server` to switch :
 
 *Http*
 
