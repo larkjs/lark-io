@@ -1,6 +1,6 @@
 # *vi-io is under development*
 # vi-io
-vi-io is a light-weight frame work for IO services (inpired by koa.io). vi-io focus on the following features
+vi-io is a light-weight frame work for IO services (inspired by koa.io). vi-io focus on the following features
 * Light-weight
 * Flexiblity
 
