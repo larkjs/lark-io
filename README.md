@@ -26,6 +26,7 @@ Start a server for any tcp connections:
     io.listen(3000);
 
 Besides tcp, http and websocket connections are also supported, you can switch the server with code like this:
+*Http*
 
     io.server(io.http); 
     io.use(function*(next){
@@ -35,6 +36,7 @@ Besides tcp, http and websocket connections are also supported, you can switch t
     //io.route is not supported for http
     io.listen(8080);
 
+*WebSocket*
 
     io.server(io.ws);
     io.use(function*(next){
