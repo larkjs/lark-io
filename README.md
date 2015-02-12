@@ -51,4 +51,4 @@ Besides tcp, http and websocket connections are also supported. Use `io.server` 
     });
     io.listen(8023);
 
-*More features to developed...*
+*More features to be developed...*
