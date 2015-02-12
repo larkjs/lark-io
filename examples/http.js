@@ -1,5 +1,4 @@
 var io  = require('..');
-var net = require('net');
 
 var app = io();
 
