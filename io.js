@@ -1,42 +1,31 @@
+'use strict';
+
 module.exports = IO;
 
-var net    = require('net');
-var handle = require('vi-misc').handle;
-var Server = require('./lib/server');
+var net         = require('net');
+var handle      = require('vi-misc').handle;
+var extend      = require('./lib/extend');
+var listen      = require('./lib/listen');
+var middleware  = require('./lib/middleware');
+var route       = require('./lib/route');
+var server      = require('./lib/server');
+
+var httpServer  = require('./lib/server/http');
+var netServer   = require('./lib/server/net');
+var wsServer    = require('./lib/server/ws');
 
 function IO(){
     if(!(this instanceof IO)) return new IO();
-    this.mw = [];
 };
 
-IO.prototype.server = function(server){
-    if(!server) return this.server;
-    this.server = new Server(server);
-};
+IO.net  = netServer;
+IO.http = httpServer;
+IO.ws   = wsServer;
 
-IO.prototype.use = function(handler){
-    if('function' != typeof handler || 'GeneratorFunction' != handler.constructor.name)
-        throw new Error("Invalid middleware");
-    this.mw.push(handler);
-    return this;
-};
+extend(IO, middleware);
 
-IO.prototype.listen = function(){
-    var me = this;
-    this.server.toHandle(function(context){
-        var mw = me.mw.concat(function*(next){
-            if(!context || !context.socket || !(context.socket instanceof net.Socket))
-                throw new Error("Context.socket is required to be an instance of net.Socket");
-            yield function(done){
-                context.socket.on('close',function(){
-                    done();
-                });
-            }
-        });
-        handle(mw, context, function(err){
-            console.log("ERR:"+err.message);
-            me.emit('error', err);
-        });
-    });
-    return this.server.listen.apply(this.server, arguments);
-};
+IO.prototype.server = server;
+
+IO.prototype.listen = listen;
+
+IO.prototype.route  = route;

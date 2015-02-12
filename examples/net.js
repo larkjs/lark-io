@@ -11,17 +11,8 @@ app.use(function*(next){
     console.log('Disconnect');
 });
 
-app.use(function*(next){
-    console.log('Running middleware 1');
-    yield next;
-    console.log('Finishing middleware 1');
-});
-
 app.route('data', function*(next){
-    console.log("Handling data");
-    console.log("Data is " + this.args[0]);
-    yield next;
-    console.log("Finishing handling data");
+    console.log("Receive : " + this.args[0]);
 });
 
 app.listen(8300,function(){

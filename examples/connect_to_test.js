@@ -1,19 +1,30 @@
 var net = require('net');
 
-var socket = net.connect(8300);
+function connect(timeout){
+    var socket = net.connect(8300);
 
-socket.on('error',function(e){
-    console.log(e);
-});
+    socket.on('error',function(e){
+        console.log(e);
+    });
 
-socket.on('connect',function(){
-    console.log("connected");
-});
+    socket.on('connect',function(){
+        console.log("connected");
+    });
 
-socket.on('data',function(data){
-    console.log(data.toString());
-});
+    socket.on('data',function(data){
+        console.log(data.toString());
+    });
 
-setTimeout(function(){
-    socket.end();
-},1000);
+    socket.on('end',function(){
+        console.log("disconnected");
+    });
+
+    socket.write("How are you");
+
+    setTimeout(function(){
+        socket.end();
+    },timeout * 1000);
+};
+
+connect(8);
+connect(4);
