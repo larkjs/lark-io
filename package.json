@@ -11,7 +11,7 @@
     ],
     "repositories" : "https://github.com/viRingbells/vi-io.git",
     "dependencies" : {
-        "vi-misc" : "~0.0.2",
+        "vi-misc" : "~0.0.3",
         "vi-websocket" : "~0.0.2",
         "socket.io" : "1.3.3",
         "extend"  : "^2.0.0"
