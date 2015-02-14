@@ -1,0 +1,5 @@
+# Dependencies, use `npm install` to get all dependencies
+node_modules/
+
+# Temp files when edit with `vi` or `vim`
+*.swp

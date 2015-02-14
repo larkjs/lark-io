@@ -2,7 +2,7 @@ var io  = require('..');
 
 var app = io();
 
-app.server(io.net);
+app.io(io.net);
 
 app.use(function*(next){
     console.log('Connect');

@@ -2,10 +2,12 @@ var io  = require('..');
 
 var app = io();
 
-app.server(io.http);
+app.io(io.http);
 
 app.use(function*(next){
-    this.body = 'How are you';
+    console.log(this.req.url);
+    this.res.write('How are you');
+    this.res.end();
 });
 
 app.listen(8300,function(){
