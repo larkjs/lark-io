@@ -72,7 +72,7 @@ Besides tcp, http and websocket connections are also supported. Use `io.io` to s
         var message = this.args[0];
         this.client.send("Message [foo] Got : " + message);
     });
-    io.listen(8300);
+    realtime.listen(8300);
 
 *Websocket & socket.io*
 
