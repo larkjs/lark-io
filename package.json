@@ -1,7 +1,7 @@
 {
-    "name": "vi-io",
+    "name": "lark-io",
     "main": "io.js",
-    "version" : "0.0.4",
+    "version" : "0.0.1",
     "author" : "Sun Haohao",
     "maintainers" : [
         {
@@ -9,7 +9,7 @@
             "email" : "viRingbells@qq.com"
         }
     ],
-    "repositories" : "https://github.com/viRingbells/vi-io.git",
+    "repositories" : "https://github.com/larkjs/lark-io.git",
     "dependencies" : {
         "vi-misc" : "~0.0.3",
         "vi-websocket" : "~0.0.2",
